@@ -1,7 +1,7 @@
 import pywifi
 import time
 import requests
-
+#抓post包  补充下面信息
 url = "http://10.101.2.205:8081/aaa-auth/api/v1/auth"
 headers = {
     "Accept": "*/*",
@@ -14,9 +14,9 @@ headers = {
 }
 data = {
     "campusCode": "3def184ad8f4755ff269862ea77393dd,1afa34a7f984eeabdbb0a7d494132ee5,65ded5353c5ee48d0b7d48c591b8f430",
-    "username": "2208114003",
-    "password": "200713",
-    "operatorSuffix": "@lt"
+    "username": "",
+    "password": "",
+    "operatorSuffix": ""
 }
 
 def isConnected():
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     time.sleep(0.5)  # 缓冲0.5秒
 
     profile = pywifi.Profile()  # 配置文件
-    profile.ssid = "Htu-AuteWiFi5G-3"  # WiFi名称
+    profile.ssid = "WiFi名称"  # WiFi名称
     ifaces.remove_all_network_profiles()  # 删除其他配置文件
     tmp_profile = ifaces.add_network_profile(profile)  # 加载配置文件
     ifaces.connect(tmp_profile)  # 连接
